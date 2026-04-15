@@ -1,0 +1,54 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  box-shadow: 0 5px 5px rgb(204, 197, 197);
+
+   }
+   .nav1 {
+    width: 20%;
+}
+p{
+padding-left: 100px;
+text-transform: capitalize;
+font-size: 40px;
+font-weight: bolder;
+
+
+}
+.nav2  {
+    width: 80%;
+   
+}
+ul{
+     display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    text-transform: capitalize;
+ 
+}
+a{
+   font-size: 30px;
+     text-decoration: none;
+     color: black;
+}
+.nav2 ul li a:hover {
+  color: chocolate;
+}
+
+ 
+ 
+
+
+
+
+
+
+ 
