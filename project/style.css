@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body,
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* --- NAVIGATION --- */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    background: white;
+    padding: 0 50px;
+    position: fixed;
+    /* Fixed to top to not take up hero space */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav1 p {
+    font-size: 28px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav2 ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav2 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* --- HERO SECTION (TRUE FULL SCREEN) --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full Viewport Height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Behind everything */
+}
+
+.hero-img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This makes the image cover the whole area */
+    opacity: 0;
+    filter: brightness(50%);
+    animation: slide 15s infinite;
+}
+
+/* Animation logic */
+.hero-img img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-img img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.hero-img img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    43% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.btn-primary {
+    background: #ff5a5f;
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+}
+
+/* --- SEARCH BAR (FLOATING) --- */
+.mendiv {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 10px 10px 40px;
+    border-radius: 100px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    /* Positioned at bottom of hero */
+    position: absolute;
+    bottom: 50px;
+}
+
+.div1,
+.div2,
+.div3 {
+    flex: 1;
+    border-right: 1px solid #eee;
+    padding: 0 20px;
+}
+
+.div3 {
+    border: none;
+}
+
+.mendiv p {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.mendiv h3 {
+    font-size: 16px;
+    color: #222;
+    margin-top: 4px;
+}
+
+.div4 {
+    background: #ff5a5f;
+    color: white;
+    padding: 18px 35px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+/* 1. Define the Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Base Styles */
+.div4 h2 {
+    font-size: 16px;
+    animation: fadeIn 1s ease-out; /* Applying animation to text */
+}
+
+/* 1. Define the Fade-In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Base Styles */
+.div4 h2 {
+    font-size: 16px;
+    animation: fadeIn 1s ease-out; /* Applying animation to text */
+}
+.prant1 {
+    background-color: #a39898;
+    height: 200px;
+    text-align: center;
+    font-style: italic;
+    font-weight: 200;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-transform: uppercase;
+    padding-top: 30px;
+    color: azure;
+}
+
+.prant {
+    display: flex;
+    justify-content: space-around;
+    border: solid black 5px;
+}
+
+/* 1. Define the Horizontal Move Animation */
+@keyframes moveHorizontal {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); } /* Moves 50px to the right */
+    100% { transform: translateX(0); }   /* Returns to start */
+}
+
+/* 2. Apply to images */
+img {
+    width: 400px;
+    height: 400px;
+    padding: 20px 10px;
+    
+    /* Apply the animation continuously */
+    /* 3s = speed, ease-in-out = smooth motion, infinite = never stops */
+    animation: moveHorizontal 3s ease-in-out infinite;
+}
+
+/* 3. Optional: Pause the movement when you hover over the image */
+img:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.prant2 {
+    display: flex;
+}
+
+.child4 img, 
+.child5 img {
+    width: 800px;
+    animation: fadeIn 1.5s ease-out; /* Applying animation to larger images */
+}
+
+.prant2 {
+    display: flex;
+}
+
+.child4 img, 
+.child5 img {
+    width: 800px;
+    height: 300px;
+    animation: fadeIn 1.5s ease-out; /* Applying animation to larger images */
+}
+.textrite{
+    display: flex;
+
+}
+.rite1{
+    background-color: aquamarine;
+    height: 500px;
+    width: 600px;
+    border: solid black 5px;
+    margin-left: 50px;
+    
+}
+   
+.rite2{
+background-color: #ff5a5f;
+width: 600px;
+height: 500px;
+border: solid black 5px;
+margin-left: 100px;
+}
